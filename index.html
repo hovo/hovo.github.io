@@ -17,24 +17,38 @@
     <div class="row text-center" id="content">
         <div class="col col-12 push-middle">
             <h3 class="title end">
-                <span id="hand">👋</span> Hi, I'm <span class="highlight">Hovhannes Khachikyan</span>
+                <span id="hand">👋</span><span id="text"></span>
             </h3>
-            <p class="big">Computer Engineering Student. Minimalist. Dog lover</p>
             
-            <a href="mailto:hovo.khc@gmail.com" class="button">Contact</a> 
-            <a href="https://github.com/khachikyan" class="button outline">My Github</a>   
+            <div id="rest-of-content">
+                <p class="big">Computer Engineering Student. Minimalist. Dog Lover.</p>
+                <a href="mailto:hovo.khc@gmail.com" class="button">Contact</a> 
+                <a href="https://github.com/khachikyan" class="button outline">My Github</a>   
+            </div>
+            
         </div>
                 
     </div>
     
     <!-- JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> 
     <script src="js/kube.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.3.0/typeit.min.js"></script>
     
-    <script>        
-        $('#content').animation('flipIn', function() {
-            $('#hand').addClass('animated tada');
-        });
+    <script>
+        $('#hand').addClass('animated tada');
+        setTimeout(function() {
+            $('#text').typeIt({
+                strings: ' Hi, I\'m <span class="highlight">Hovhannes Khachikyan</span>',
+                speed: 50,
+                autoStart: true,
+                callback: function() {
+                    $("#rest-of-content").css("visibility", "visible");
+                    $('#rest-of-content').addClass('animated fadeIn');
+                }
+            });
+        }, 1000);
+        
     </script>
 </body>
 </html>
