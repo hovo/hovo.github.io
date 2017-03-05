@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/kube.css">
+    <link rel="stylesheet" href="css/kube.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 </head>
 <body>
         
-    <div class="row text-center" id="content" style="height: 100vh">
+    <div class="row text-center" id="content">
         <div class="col col-12 push-middle">
             <h3 class="title end">
-                👋 Hi, I'm <span class="highlight">Hovhannes Khachikyan</span>
+                <span id="hand">👋</span> Hi, I'm <span class="highlight">Hovhannes Khachikyan</span>
             </h3>
             <p class="big">Computer Engineering Student. Minimalist. Dog lover</p>
             
@@ -27,10 +29,12 @@
     
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="js/kube.js"></script>
+    <script src="js/kube.min.js"></script>
     
     <script>
-        $('#content').animation('flipIn');
+        $('#content').animation('flipIn', function() {
+            $('#hand').addClass('animated swing');
+        });
     </script>
 </body>
 </html>

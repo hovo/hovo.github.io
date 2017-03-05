@@ -1,0 +1,9 @@
+#hand {
+    display: -moz-inline-stack;
+    display: inline-block;
+}
+
+#content {
+    height: 100vh;
+}
+
